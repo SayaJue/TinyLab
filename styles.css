@@ -282,6 +282,30 @@ section {
   margin-top: 0;
 }
 
+.course-list,
+.update-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.course-list li,
+.update-list li {
+  margin: 14px 0;
+  line-height: 1.75;
+}
+
+.news-story {
+  margin-top: 24px;
+}
+
+.news-story h3 {
+  margin-bottom: 10px;
+}
+
+.news-story p {
+  margin: 12px 0;
+}
+
 .hero-caption {
   color: var(--muted);
   font-size: 16px;
