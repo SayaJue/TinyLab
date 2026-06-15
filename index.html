@@ -1,9 +1,283 @@
-<h1> Welcom to my Tiny Lab </h1>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/style2.css">
-<link rel="shortcut icon" href="icon/favicon.ico">
-<script type="text/javascript" src="js/main.js"></script>
-<title>RPG探検隊 TOP</title>
-<script type="text/javascript" src="chrome-extension://dbjbempljhcmhlfpfacalomonjpalpko/scripts/inspector.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capturing Whispers — Optical Microsystems Lab</title>
+  <meta name="description" content="Research in photoacoustic sensing, WGM resonators, physics-informed AI, and hyperspectral imaging." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#06060a;
+      --panel:rgba(255,255,255,0.03);
+      --muted:rgba(255,255,255,0.55);
+      --accent:#6df0ff; /* cyan-ish */
+      --accent-2:#c57bff; /* purple */
+      --glass:linear-gradient(135deg, rgba(109,240,255,0.06), rgba(197,123,255,0.03));
+      --max-width:1100px;
+      --gap:48px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:0;
+      background:radial-gradient(1200px 600px at 10% 10%, rgba(109,240,255,0.03), transparent),
+                 linear-gradient(180deg,#05050a 0%, var(--bg) 40%);
+      color:#fff; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;
+      -webkit-tap-highlight-color:transparent;
+    }
+    /* Layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
+    header{position:fixed;left:0;right:0;top:18px;z-index:40;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .nav{width:100%;max-width:var(--max-width);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 12px;pointer-events:auto}
+    .brand{font-weight:800;letter-spacing:0.06em;font-size:18px;color:var(--accent)}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;opacity:0.95}
+    nav a:hover{color:var(--accent);text-decoration:none}
+    .hero{min-height:100vh;display:grid;align-items:center}
+    .hero-inner{display:flex;flex-direction:column;gap:20px;padding:120px 12px 80px}
+    .eyebrow{color:var(--muted);font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:12px}
+    h1{font-size:clamp(38px,6.6vw,84px);line-height:0.95;margin:0;font-weight:800;letter-spacing:-0.02em;max-width:1100px}
+    p.lead{max-width:760px;color:rgba(255,255,255,0.85);font-size:18px;margin:6px 0 0}
+    .cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);padding:10px 14px;border-radius:8px;font-weight:700}
+    .muted{color:var(--muted)}
+
+    /* Sections */
+    section{padding:120px 0;min-height:60vh}
+    .panel{background:var(--panel);border-radius:14px;padding:28px;backdrop-filter:blur(6px);box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+    .two-col{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+    .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+    .card{padding:22px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .card h4{margin:0 0 8px}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* Footer / Contact */
+    footer{padding:48px 0;color:var(--muted);font-size:14px}
+
+    /* Small interactive elements */
+    .accent-line{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:4px;width:120px}
+
+    /* Reveal animations */
+    .reveal{opacity:0;transform:translateY(18px) scale(0.995);transition:opacity .9s cubic-bezier(.2,.9,.2,1),transform .9s cubic-bezier(.2,.9,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .two-col{grid-template-columns:1fr}
+      nav ul{display:none}
+      .nav{padding:12px}
+      .hero-inner{padding:90px 12px 60px}
+    }
+    @media (max-width:520px){
+      .container{padding:24px 16px}
+      h1{font-size:34px}
+      .hero-inner{padding:72px 8px 48px}
+    }
+    /* Minimal scrollbar aesthetic */
+    ::-webkit-scrollbar{height:8px;width:8px}
+    ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.06);border-radius:8px}
+  </style>
 </head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand">Optical Microsystems Lab</div>
+      <nav>
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#areas">Research</a></li>
+          <li><a href="#works">Selected</a></li>
+          <li><a href="#papers">Papers</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow reveal">Research Vision</div>
+        <h1 class="reveal">Capturing whispers hidden in <span style="background:var(--glass);padding:6px 10px;border-radius:8px;color:var(--accent)">light</span>, <span style="background:var(--glass);padding:6px 10px;border-radius:8px;color:var(--accent-2)">sound</span>, and <span style="background:var(--glass);padding:6px 10px;border-radius:8px;color:rgba(255,255,255,0.9)">matter</span>.</h1>
+        <p class="lead reveal">We design optical and optoacoustic micro-resonators, fuse physics-aware AI with hyperspectral sensing, and translate fundamental insights into sensitive, compact sensing systems for biological and environmental discovery.</p>
+        <div class="cta reveal">
+          <a class="btn" href="#areas">Explore Research</a>
+          <a class="btn" href="#works" style="border-color:rgba(255,255,255,0.04);color:var(--accent-2)">Selected Works</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="container">
+        <div class="panel reveal">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div class="accent-line"></div>
+            <h2 style="margin:0;font-size:28px">Research Vision</h2>
+            <p class="muted">We pursue instrumentation and theory that reveal signals otherwise lost: from ultraweak photoacoustic traces to modal shifts in whispering-gallery resonators. Our goal is to build tools that let scientists "listen" to light and images with new sensitivity and interpretability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap">
+          <div style="flex:1;min-width:300px">
+            <h2 class="reveal">Research Areas</h2>
+            <p class="muted reveal">Interdisciplinary work spanning experiment, theory, and computation.</p>
+            <div style="height:20px"></div>
+            <div class="grid-cards">
+              <div class="card reveal">
+                <h4>Photoacoustic & Photoacoustic Sensing</h4>
+                <div class="meta">High-sensitivity optical detection of acoustic responses for label-free imaging and sensing.</div>
+              </div>
+              <div class="card reveal">
+                <h4>Whispering-Gallery-Mode Resonators</h4>
+                <div class="meta">Design and control of microresonators for sensing, nonlinear optics, and quantum interfaces.</div>
+              </div>
+              <div class="card reveal">
+                <h4>Physics-Informed AI</h4>
+                <div class="meta">Hybrid models that merge first-principles constraints with data-driven learning for interpretable inference.</div>
+              </div>
+              <div class="card reveal">
+                <h4>Hyperspectral Imaging</h4>
+                <div class="meta">Multispectral and hyperspectral techniques for material, biomedical, and environmental characterization.</div>
+              </div>
+            </div>
+          </div>
+          <aside style="width:360px;min-width:260px" class="reveal panel">
+            <h3 style="margin-top:0">Approach</h3>
+            <p class="muted">We iterate between device engineering, physical modeling, and constrained AI. Emphasis on compact devices, reproducible calibrations, and open data for community impact.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="container">
+        <h2 class="reveal">Representative Works</h2>
+        <div style="height:18px"></div>
+        <div class="grid-cards">
+          <article class="card reveal">
+            <h4>Nano-WGM Photoacoustic Sensor</h4>
+            <div class="meta">Compact whispering-gallery resonator coupled to a fiber probe enabling sub-nanometer displacement readout. (Nature Communications, 2024)</div>
+          </article>
+          <article class="card reveal">
+            <h4>Physics-Informed Hyperspectral Unmixing</h4>
+            <div class="meta">Combines radiative transfer priors with deep learning for robust material decomposition. (Science Advances, 2023)</div>
+          </article>
+          <article class="card reveal">
+            <h4>Acoustic Imaging with Optical Readout</h4>
+            <div class="meta">Noninvasive photoacoustic sensing architecture for microvascular imaging in tissue phantoms. (Optica, 2022)</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="papers">
+      <div class="container">
+        <h2 class="reveal">Selected Publications</h2>
+        <div style="height:18px"></div>
+        <div class="panel reveal">
+          <ol style="margin:0 0 0 18px;padding:12px 6px">
+            <li style="margin:12px 0"><strong>Smith, J.</strong> et al. Nano-WGM Photoacoustic Sensor. Nature Communications (2024). <span class="muted">DOI: 10.1038/example</span></li>
+            <li style="margin:12px 0"><strong>Smith, J.</strong> Physics-Informed Hyperspectral Unmixing. Science Advances (2023). <span class="muted">DOI: 10.1126/example</span></li>
+            <li style="margin:12px 0"><strong>Smith, J.</strong> Optical Readout for Acoustic Imaging. Optica (2022). <span class="muted">DOI: 10.1364/example</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container">
+        <h2 class="reveal">News & Updates</h2>
+        <div style="height:12px"></div>
+        <div class="panel reveal">
+          <ul style="margin:0;padding-left:18px">
+            <li style="margin:10px 0"><strong>Jun 2026</strong> — Leading a new NSF-funded project on chip-scale photoacoustic arrays.</li>
+            <li style="margin:10px 0"><strong>Dec 2025</strong> — Invited talk at SPIE Photonics West.</li>
+            <li style="margin:10px 0"><strong>Aug 2025</strong> — Open-source hyperspectral dataset released on GitHub.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <div class="two-col">
+          <div class="reveal">
+            <h2>Teaching Philosophy</h2>
+            <p class="muted">Teaching integrates hands-on instrumentation with rigorous modeling. Courses emphasize reproducibility, data integrity, and the interplay between experiment and computation. Mentorship focuses on independence, rigorous thinking, and clear scientific communication.</p>
+            <div style="height:20px"></div>
+            <h3>Course Themes</h3>
+            <ul class="muted">
+              <li>Optical Instrumentation & Measurement</li>
+              <li>Computational Imaging & Inverse Problems</li>
+              <li>Physics-Informed Machine Learning</li>
+            </ul>
+          </div>
+          <aside class="panel reveal">
+            <h3 style="margin-top:0">Mentoring</h3>
+            <p class="muted">Students gain experience from device fabrication to publishing. We prioritize reproducible pipelines and open science.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="panel reveal">
+          <h2>Contact</h2>
+          <p class="muted">For inquiries about positions, collaborations, or invitations, please reach out.</p>
+          <p style="margin-top:18px"><strong>Email:</strong> <a href="mailto:applicant@example.edu" style="color:var(--accent)">applicant@example.edu</a></p>
+          <p><strong>Profiles:</strong> <a href="#" style="color:var(--accent-2)">Google Scholar</a> • <a href="#" style="color:var(--accent)">ORCID</a> • <a href="#" style="color:var(--accent-2)">GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div class="muted">© 2026 Optical Microsystems Lab</div>
+          <div class="muted">Designed for faculty job applications — minimal, immersive, and focused on research vision.</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple reveal-on-scroll and nav active state
+    (function(){
+      const reveals = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+      },{threshold:0.12});
+      reveals.forEach(r=>io.observe(r));
+
+      // Smooth highlight for nav
+      const navLinks = document.querySelectorAll('nav a');
+      const sections = [...navLinks].map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      window.addEventListener('scroll',()=>{
+        const y = window.scrollY + innerHeight*0.35;
+        let idx = sections.findIndex(s=>s.offsetTop>y);
+        if(idx===-1) idx = sections.length-1;
+        const active = sections[Math.max(0, idx)];
+        navLinks.forEach(a=>a.style.opacity=(document.querySelector(a.getAttribute('href'))===active?1:0.65));
+      },{passive:true});
+
+      // Mobile nav (simple)
+      // Add keyboard-friendly skip for focusable links
+      document.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('focus',()=>a.style.outline='2px solid rgba(109,240,255,0.12)');
+        a.addEventListener('blur',()=>a.style.outline='');
+      });
+    })();
+  </script>
+</body>
+</html>
