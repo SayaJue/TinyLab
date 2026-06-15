@@ -7,70 +7,7 @@
   <meta name="description" content="Research in photoacoustic sensing, WGM resonators, physics-informed AI, and hyperspectral imaging." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #06060a;
-      --panel: rgba(255,255,255,0.03);
-      --muted: rgba(255,255,255,0.55);
-      --accent: #6df0ff;
-      --accent-2: #c57bff;
-      --glass: linear-gradient(135deg, rgba(109,240,255,0.06), rgba(197,123,255,0.03));
-      --max-width: 1100px;
-    }
-    * { box-sizing: border-box; }
-    html, body { min-height: 100%; }
-    body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(109,240,255,0.03), transparent),
-                  linear-gradient(180deg, #05050a 0%, var(--bg) 40%);
-      color: #fff;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 36px 24px; }
-    header { position: fixed; inset: 18px 0 auto; z-index: 40; display: flex; justify-content: center; pointer-events: none; }
-    .nav { width: 100%; max-width: var(--max-width); display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 12px; pointer-events: auto; }
-    .brand { font-weight: 800; letter-spacing: 0.06em; font-size: 18px; color: var(--accent); }
-    nav ul { display: flex; gap: 18px; list-style: none; padding: 0; margin: 0; }
-    nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; opacity: 0.95; }
-    nav a:hover { color: var(--accent); }
-    .hero { min-height: 100vh; display: grid; align-items: center; }
-    .hero-inner { display: flex; flex-direction: column; gap: 20px; padding: 120px 12px 80px; }
-    .eyebrow { color: var(--muted); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; }
-    h1 { font-size: clamp(38px, 6.6vw, 84px); line-height: 0.95; margin: 0; font-weight: 800; letter-spacing: -0.02em; max-width: 1100px; }
-    p.lead { max-width: 760px; color: rgba(255,255,255,0.88); font-size: 18px; margin: 6px 0 0; }
-    .cta { margin-top: 18px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: var(--accent); padding: 10px 14px; border-radius: 10px; font-weight: 700; }
-    .btn.secondary { color: var(--accent-2); }
-    .muted { color: var(--muted); }
-    section { padding: 120px 0; }
-    .panel { background: var(--panel); border-radius: 18px; padding: 32px; backdrop-filter: blur(10px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-    .two-col { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
-    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .card { padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); }
-    .card h4 { margin: 0 0 10px; font-size: 18px; }
-    .meta { color: var(--muted); font-size: 13px; line-height: 1.7; }
-    .accent-line { height: 3px; width: 120px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); margin-bottom: 18px; }
-    .reveal { opacity: 0; transform: translateY(22px) scale(0.995); transition: opacity .85s ease, transform .85s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (max-width: 900px) {
-      .two-col { grid-template-columns: 1fr; }
-      nav ul { display: none; }
-      .hero-inner { padding: 90px 12px 60px; }
-      header { top: 0; }
-    }
-    @media (max-width: 520px) {
-      .container { padding: 24px 16px; }
-      h1 { font-size: 34px; }
-      .hero-inner { padding: 72px 8px 48px; }
-    }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -78,12 +15,11 @@
       <div class="brand">Optical Microsystems Lab</div>
       <nav>
         <ul>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#areas">Research</a></li>
-          <li><a href="#works">Selected</a></li>
-          <li><a href="#papers">Papers</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="news.html">News</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -191,24 +127,6 @@
       </div>
     </footer>
   </main>
-  <script>
-    (function() {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-      }, { threshold: 0.12 });
-      reveals.forEach(el => observer.observe(el));
-      const navLinks = document.querySelectorAll('nav a');
-      const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-      window.addEventListener('scroll', () => {
-        const position = window.scrollY + window.innerHeight * 0.35;
-        let active = sections[0];
-        for (const section of sections) {
-          if (section.offsetTop <= position) active = section;
-        }
-        navLinks.forEach(link => link.style.opacity = document.querySelector(link.getAttribute('href')) === active ? '1' : '0.65');
-      }, { passive: true });
-    })();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
