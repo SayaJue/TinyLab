@@ -1,133 +1,120 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capturing Whispers — AI Photonics Lab</title>
-  <meta name="description" content="Research in photoacoustic sensing, WGM resonators, physics-informed AI, and hyperspectral imaging." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Your Research Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="nav container">
-      <div class="brand">AI Photonics Lab</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero" id="hero">
-      <div class="container hero-inner">
-        <div class="eyebrow reveal">Research Vision</div>
-        <h1 class="reveal">Capturing whispers hidden in <span style="background:var(--glass);padding:6px 10px;border-radius:10px;color:var(--accent)">light</span>, <span style="background:var(--glass);padding:6px 10px;border-radius:10px;color:var(--accent-2)">sound</span>, and <span style="background:var(--glass);padding:6px 10px;border-radius:10px;color:rgba(255,255,255,0.9)">matter</span>.</h1>
-        <p class="lead reveal">We design optical and optoacoustic micro-resonators, fuse physics-aware AI with hyperspectral sensing, and translate fundamental insights into sensitive, compact sensing systems for biological and environmental discovery.</p>
-        <div class="cta reveal">
-          <a class="btn" href="#areas">Explore Research</a>
-          <a class="btn secondary" href="#works">Selected Works</a>
-        </div>
-      </div>
-    </section>
-    <section id="vision">
-      <div class="container">
-        <div class="panel reveal">
-          <div class="accent-line"></div>
-          <h2>Research Vision</h2>
-          <p class="muted">We pursue instrumentation and theory that reveal signals otherwise lost: from ultraweak photoacoustic traces to modal shifts in whispering-gallery resonators. Our goal is to build tools that let scientists "listen" to light and images with new sensitivity and interpretability.</p>
-        </div>
-      </div>
-    </section>
-    <section id="areas">
-      <div class="container">
-        <div class="two-col">
-          <div>
-            <h2 class="reveal">Research Areas</h2>
-            <p class="muted reveal">Interdisciplinary work spanning experiment, theory, and computation.</p>
-            <div class="grid-cards">
-              <div class="card reveal"><h4>Photoacoustic Sensing</h4><p class="meta">High-sensitivity optical detection of acoustic responses for label-free imaging and sensing.</p></div>
-              <div class="card reveal"><h4>Whispering-Gallery-Mode Resonators</h4><p class="meta">Design and control of microresonators for sensing, nonlinear optics, and quantum interfaces.</p></div>
-              <div class="card reveal"><h4>Physics-Informed AI</h4><p class="meta">Hybrid models that merge first-principles constraints with data-driven learning for interpretable inference.</p></div>
-              <div class="card reveal"><h4>Hyperspectral Imaging</h4><p class="meta">Multispectral and hyperspectral techniques for material, biomedical, and environmental characterization.</p></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vision.html">Vision</a></li>
+                <li><a href="research-directions/index.html">Research Directions</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="education-mentoring.html">Education & Mentoring</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>ARISE</h1>
+            <p>A resonant-field-based physical information reconstruction framework.</p>
+        </section>
+
+        <section class="content-section" id="vision">
+            <h2>VISION</h2>
+            <p>The physical world is continuously encoding information through coupled optical, acoustic, and mechanical interactions.</p>
+            <p>However, in complex scattering and dynamic environments, this information is not directly observable, and conventional sensing approaches reduce it into incomplete or averaged measurements.</p>
+            <p>We aim to fundamentally change this paradigm.</p>
+            <p>Instead of improving individual sensors, we develop a framework for reconstructing latent physical information from resonant field interactions.</p>
+        </section>
+
+        <section class="content-section" id="arise-framework">
+            <h2>ARISE — A Research Framework</h2>
+            <p>ARISE is an acoustic–resonator–informed sensing and estimation framework that integrates optical whispering-gallery resonators, photoacoustic transduction, and physics-informed AI to reconstruct latent information embedded in complex multi-physical environments.</p>
+            <p>Rather than treating sensing as measurement, ARISE reframes it as:</p>
+            <p class="highlight">inverse physical inference from resonant field dynamics.</p>
+        </section>
+
+        <section class="content-section" id="arise-system">
+            <h2>ARISE SYSTEM</h2>
+            <p>ARISE is not a single device or experiment.</p>
+            <p>It is a multi-layer physical information reconstruction architecture:</p>
+            <div class="layer">
+                <h3>Layer 01 — Optical Resonator Core</h3>
+                <p>High-Q whispering-gallery resonators enable ultra-sensitive encoding of external perturbations into stable optical eigenmodes.</p>
             </div>
-          </div>
-          <aside class="panel reveal">
-            <h3>Approach</h3>
-            <p class="muted">We iterate between device engineering, physical modeling, and constrained AI. Emphasis on compact devices, reproducible calibrations, and open data for community impact.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-    <section id="works">
-      <div class="container">
-        <h2 class="reveal">Representative Works</h2>
-        <div class="grid-cards">
-          <article class="card reveal"><h4>Multimode WGM barcode sensing</h4><p class="meta">Multimode sensing by optical whispering-gallery-mode barcodes expands dynamic range for high-resolution measurement. (IEEE Transactions on Instrumentation and Measurement, 2024)</p></article>
-          <article class="card reveal"><h4>Biochemical sensing with WGM resonators</h4><p class="meta">From whispering gallery mode resonators to biochemical sensors, demonstrating WGM-based detection for label-free material analysis. (ACS Sensors, 2023)</p></article>
-          <article class="card reveal"><h4>PDMS-backed displacement detection</h4><p class="meta">High-Q WGM resonators encapsulated in PDMS for highly sensitive displacement detection in compact optical systems. (Journal of Lightwave Technology, 2023)</p></article>
-        </div>
-      </div>
-    </section>
-    <section id="papers">
-      <div class="container panel reveal">
-        <h2>Selected Publications</h2>
-        <ol style="margin:0;padding-left:18px;">
-          <li style="margin:14px 0"><strong>Liao, J.</strong> Multimode sensing by optical whispering-gallery-mode barcodes: A new route to expand dynamic range for high-resolution measurement. <em>IEEE Transactions on Instrumentation and Measurement</em> 73, 1–10 (2024). <span class="muted">DOI: 10.1109/TIM.2024.3352712</span></li>
-          <li style="margin:14px 0"><strong>Loyez, M., Adolphson, M., Liao, J., Yang, L.</strong> From whispering gallery mode resonators to biochemical sensors. <em>ACS Sensors</em> 8 (7), 2440–2470 (2023).</li>
-          <li style="margin:14px 0"><strong>Qavi, A. J., Liao, J., Adolphson, M., Yang, L.</strong> High-Q WGM resonators encapsulated in PDMS for highly sensitive displacement detection. <em>Journal of Lightwave Technology</em> 41 (9), 2862–2869 (2023).</li>
-        </ol>
-        <p class="muted" style="margin-top:18px;">Visit the <a href="publications.html" style="color:var(--accent)">full Publications page</a> for additional papers and research highlights.</p>
-      </div>
-    </section>
-    <section id="news">
-      <div class="container panel reveal">
-        <h2>News & Updates</h2>
-        <ul style="margin:0;padding-left:18px;">
-          <li style="margin:12px 0"><strong>Apr 2024</strong> — WashU news: WGM barcode sensing expands dynamic range in high-resolution optical sensors.</li>
-          <li style="margin:12px 0"><strong>Dec 2025</strong> — Invited talk at SPIE Photonics West.</li>
-          <li style="margin:12px 0"><strong>Aug 2025</strong> — Open-source hyperspectral dataset released on GitHub.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="teaching">
-      <div class="container two-col">
-        <div class="reveal">
-          <h2>Teaching Philosophy</h2>
-          <p class="muted">Teaching integrates hands-on instrumentation with rigorous modeling. Courses emphasize reproducibility, data integrity, and the interplay between experiment and computation. Mentorship focuses on independence, rigorous thinking, and clear scientific communication.</p>
-          <h3>Course Themes</h3>
-          <ul class="muted"><li>Optical Instrumentation & Measurement</li><li>Computational Imaging & Inverse Problems</li><li>Physics-Informed Machine Learning</li></ul>
-        </div>
-        <aside class="panel reveal">
-          <h3>Mentoring</h3>
-          <p class="muted">Students gain experience from device fabrication to publishing. We prioritize reproducible pipelines and open science.</p>
-        </aside>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container panel reveal">
-        <h2>Contact</h2>
-        <p class="muted">For inquiries about positions, collaborations, or invitations, please reach out.</p>
-        <p style="margin-top:18px;"><strong>Email:</strong> <a href="mailto:applicant@example.edu" style="color:var(--accent)">applicant@example.edu</a></p>
-        <p><strong>Profiles:</strong> <a href="https://scholar.google.com/citations?user=GTvTdDgAAAAJ&hl=en" target="_blank" rel="noopener" style="color:var(--accent-2)">Google Scholar</a> • <a href="#" style="color:var(--accent)">ORCID</a> • <a href="#" style="color:var(--accent-2)">GitHub</a></p>
-      </div>
-    </section>
+            <div class="layer">
+                <h3>Layer 02 — Photoacoustic Transduction Layer</h3>
+                <p>Photoacoustic excitation introduces broadband physical perturbations that probe otherwise inaccessible material and fluid dynamics.</p>
+            </div>
+            <div class="layer">
+                <h3>Layer 03 — AI Inference Engine</h3>
+                <p>Physics-informed machine learning models reconstruct latent system states from coupled optical–acoustic signal manifolds.</p>
+            </div>
+            <p>Together, these layers form a unified framework for transforming physical interactions into interpretable information structures.</p>
+        </section>
+
+        <section class="content-section" id="what-is-being-established">
+            <h2>WHAT IS BEING ESTABLISHED</h2>
+            <p>ARISE is not positioned as an incremental sensing improvement.</p>
+            <p>It defines a broader direction:</p>
+            <p class="highlight">resonant-field-based physical information reconstruction.</p>
+            <p>This direction moves beyond conventional sensing, which relies on direct measurement or imaging, toward systems that infer hidden physical states from the dynamics of coupled fields.</p>
+            <p>In this sense, ARISE bridges:</p>
+            <ul class="bridge-list">
+                <li>optical resonator physics</li>
+                <li>photoacoustic signal generation</li>
+                <li>inverse problem theory</li>
+                <li>and data-driven physical inference</li>
+            </ul>
+            <p>into a unified framework for complex environment sensing.</p>
+        </section>
+
+        <section class="content-section" id="future-directions">
+            <h2>FUTURE DIRECTIONS</h2>
+            <p>The long-term goal of ARISE is to establish a general class of resonant physical intelligence systems, capable of operating in environments where direct observation fails.</p>
+            <p>Key directions include:</p>
+            <ul class="directions-list">
+                <li>Extending ARISE to heterogeneous and highly scattering media</li>
+                <li>Developing generalizable inverse models for multi-modal physical fields</li>
+                <li>Scaling from single-device sensing to distributed resonant sensing networks</li>
+                <li>Establishing a unified theory of resonant-field information encoding</li>
+            </ul>
+            <p>Ultimately, ARISE aims to shift sensing from:</p>
+            <p class="quote">“detecting signals”</p>
+            <p>to</p>
+            <p class="quote">“reconstructing physical reality from resonant dynamics.”</p>
+        </section>
+    </main>
+
     <footer>
-      <div class="container" style="padding: 48px 0; color: var(--muted); font-size: 14px;">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-          <div>© 2026 Optical Microsystems Lab</div>
-          <div>Designed for faculty job applications — minimal, immersive, and focused on research vision.</div>
-        </div>
-      </div>
+        <p>&copy; 2026 Your Research Group</p>
     </footer>
-  </main>
-  <script src="script.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.content-section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+    </script>
 </body>
 </html>
